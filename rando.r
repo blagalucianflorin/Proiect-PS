@@ -53,14 +53,18 @@ rando <- function (n)
     }
     
     ret_vec <- x1
-    last_x  = x1
-    a       <- rexp (n = 1, rate = 5)
-    b       <- rnorm (n = 1, mean = 2, sd = 1)
-    for (i in 2:n)
+    
+    if (n > 1)
     {
-        next_x <- a * last_x + b
-        ret_vec <- c (ret_vec, next_x)
-        last_x <- next_x
+        last_x  = x1
+        a       <- rexp (n = 1, rate = 5)
+        b       <- rnorm (n = 1, mean = 2, sd = 1)
+        for (i in 2:n)
+        {
+            next_x <- a * last_x + b
+            ret_vec <- c (ret_vec, next_x)
+            last_x <- next_x
+        }
     }
     
     return (ret_vec)
