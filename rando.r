@@ -1,14 +1,3 @@
-test <- function ()
-{
-    curr_time   = Sys.time ()
-    print (curr_time)
-    t1          = strtoi (gsub (":", "", format (curr_time, "%X")), base = 10L)
-    print (t1)
-    result      = t1 %% 17
-    print (result)
-}
-
-
 rando <- function (n)
 {
     tried <- 0
